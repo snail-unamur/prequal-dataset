@@ -29,7 +29,7 @@ readme.md #You are here
 
 Directory names strictly follow the organization name, repository name, and the target pull request number.
 
-For example, the 9th pull request of the Spring Framework repository (organization: spring-projects, repository: spring-framework) is located at:
+For example, the 9th pull request of the Spring Framework repository (organization: `spring-projects`, repository: `spring-framework`) is located at:
 
 ```
 analysis/spring-projects/spring-framework/pr_9
@@ -37,7 +37,7 @@ analysis/spring-projects/spring-framework/pr_9
 
 ## Metadata Dump
 
-The dump directory contains a MongoDB dump comprising metadata associated with the dataset.
+The `dump` directory contains a MongoDB dump comprising metadata associated with the dataset.
 To access this data, the dump must be restored into a MongoDB instance using the following command:
 
 ```bash
