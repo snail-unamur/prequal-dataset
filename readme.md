@@ -1,15 +1,19 @@
 # Pull Request Datasets
 
-This repository is a comprehensive dataset of Pull Request (PR) from various Java repository.
-In addition of metadata of the PR, the datasets includes information on comments, reviews, code on the base and head branch, and also code metrics on both branches.
+This repository provides a comprehensive dataset of Pull Requests (PRs) collected from various Java repositories.
 
-**Authors:** Mallory Bouchard, Hugo Raskin, Arthur Smoos, and Taj Eddine Temsamani Bouazza \
-**Year:** April 2026
+In addition to PR metadata, the dataset includes:
+- Comments and reviews,
+- Source code from both the base and head branches,
+- Code metrics computed for each branch.
 
-___
+**Authors**: Mallory Bouchard, Hugo Raskin, Arthur Smoos, and Taj Eddine Temsamani Bouazza \
+**Year**: April 2026 \
+**Analysis dates**: From March to April 2026
+
 ## Repository Hierarchy
 
-The hierarchy of the dataset is structured as followed:
+The dataset is organized according to the following directory structure:
 
 ```bash
 analysis
@@ -20,20 +24,27 @@ analysis
             └── base.zip
 dump/
 └── pull_requests
-readme.md (You are here)
+readme.md #You are here
 ```
 
-The naming convention of the directories strictly follows the organization, repository name, and the number of the target PR.
-For example, the 9th PR of Spring Framework (organization: `spring-projects` and repo: `spring-framework`), can be found at `analysis/spring-projects/spring-framework/pr_9`.
+Directory names strictly follow the organization name, repository name, and the target pull request number.
 
-The `dump` directory is a Mongo dump of a database comprehsing metadata on the dataset. 
-It must be imported in a Mongo instance to retrieve the data:
+For example, the 9th pull request of the Spring Framework repository (organization: spring-projects, repository: spring-framework) is located at:
+
+```
+analysis/spring-projects/spring-framework/pr_9
+```
+
+## Metadata Dump
+
+The dump directory contains a MongoDB dump comprising metadata associated with the dataset.
+To access this data, the dump must be restored into a MongoDB instance using the following command:
 
 ```bash
 mongorestore -h host.com:port -d your_db_instance -u username -p password dump/pull_requests
 ```
 
-The description of the data is described in the next section.
+A detailed description of the stored data is provided in the next section.
 
 ## Data description
 
