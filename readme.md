@@ -56,6 +56,8 @@ To access this data, the dump must be restored into a MongoDB instance using the
    docker exec -it mongo mongorestore /dump
    ```
 
+4. Connect to the MongoDB instance and access the `pull_requests` collection to explore the data.
+
 A detailed description of the stored data is provided in the next section.
 
 ## Data description
