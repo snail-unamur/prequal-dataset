@@ -1,6 +1,6 @@
 # Pull Requests Dataset
 
-This repository provides a comprehensive dataset of Pull Requests (PRs) collected from various Java repositories.
+This repository provides a comprehensive dataset of Pull Requests (PRs) collected from various GitHub repositories.
 
 In addition to PR metadata, the dataset includes:
 - Comments and reviews,
@@ -110,7 +110,3 @@ The arrays contain objects detailing:
 * **body**: Text content (Markdown, often including SonarCloud badges).
 * **state** (Reviews only): Validation status (`COMMENTED`, `APPROVED`, `CHANGES_REQUESTED`).
 * **created_at** / **submitted_at**: Timestamp of the interaction.
-
-- Describe prequal
-- Describe dataset project
-- Describe mongo scheme
