@@ -1,0 +1,43 @@
+abstract: '<p dir="auto">This repository provides a comprehensive dataset of Pull
+  Requests (PRs) collected from various GitHub repositories.</p>
+
+  <p dir="auto">In addition to PR metadata, the dataset includes:</p>
+
+  <ul>
+
+  <li>Comments and reviews,</li>
+
+  <li>Source code from both the base and head branches,</li>
+
+  <li>Code metrics computed for each branch.</li>
+
+  </ul>'
+authors:
+- affiliation: University of Namur
+  family-names: Hugo Raskin
+  orcid: 0009-0003-0349-4720
+- affiliation: University of Namur
+  family-names: Mallory Bouchard
+- affiliation: University of Namur
+  family-names: Smoos
+  given-names: Arthur
+- affiliation: University of Namur
+  family-names: Temsamani Bouazza
+  given-names: Taj Eddine
+- affiliation: University of Namur
+  family-names: Devroey
+  given-names: Xavier
+  orcid: 0000-0002-0831-7606
+- affiliation: University of Namur
+  family-names: Vanderose
+  given-names: "Beno\xEEt"
+  orcid: 0000-0001-9752-0085
+cff-version: 1.2.0
+date-released: '2026-03-31'
+doi: 10.5281/zenodo.19354721
+license:
+- cc-by-4.0
+message: If you use this dataset, please cite it using the metadata from this file.
+title: PReQual - Pull Requests Dataset
+type: dataset
+version: v0.0.1
