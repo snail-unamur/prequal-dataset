@@ -75,11 +75,9 @@ Each entry is a JSON object representing a unique PR analysis.
 | `base` | `Object` | Code metrics of the target branch (before the PR).                      |
 | `head` | `Object` | Code metrics of the source branch (after the PR).                       |
 | `meta` | `Object` | GitHub metadata for the Pull Request.                                   |
- | `size` | `Object` | Relative size of Pull Request changes.                                  |
 | `stats` | `Object` | Size and duration statistics.                                           |
 | `comments` | `Array` | List of comments (human and bot-generated).                             |
 | `reviews` | `Array` | List of code reviews performed.                                         |
- | `review_decision` | `String` | Overall review decision (`APPROVED`, `CHANGES_REQUESTED`, `COMMENTED`). |
 
 ---
 
@@ -104,12 +102,7 @@ These objects measure the technical health of the source code. The metrics are c
 * **created_at** / **closed_at** / **merged_at**: Lifecycle timestamps.
 * **author**: Object containing `login` and `is_bot` (Boolean).
 
-#### 3. Size Metrics (`size`)
-* **additions**: Number of lines added in the PR.
-* **deletions**: Number of lines removed in the PR.
-* **changed_files**: Number of files modified in the PR.
-
-#### 4. Statistics (`stats`)
+#### 3. Statistics (`stats`)
 * **head_size**: Relative size of the source branch.
 * **base_size**: Relative size of the target branch.
 * **total_time**: Total time elapsed (likely in minutes/hours).
