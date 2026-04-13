@@ -75,6 +75,7 @@ Each entry is a JSON object representing a unique PR analysis.
 | `base` | `Object` | Code metrics of the target branch (before the PR).                      |
 | `head` | `Object` | Code metrics of the source branch (after the PR).                       |
 | `meta` | `Object` | GitHub metadata for the Pull Request.                                   |
+| `merged_in_default_branch` | `Boolean` | Indicates if the PR was merged into the default branch.                   |
 | `stats` | `Object` | Size and duration statistics.                                           |
 | `comments` | `Array` | List of comments (human and bot-generated).                             |
 | `reviews` | `Array` | List of code reviews performed.                                         |
@@ -115,3 +116,7 @@ The arrays contain objects detailing:
 * **body**: Text content (Markdown, often including SonarCloud badges).
 * **state** (Reviews only): Validation status (`COMMENTED`, `APPROVED`, `CHANGES_REQUESTED`).
 * **created_at** / **submitted_at**: Timestamp of the interaction.
+
+## Current Repositories
+The dataset includes PRs from the following repositories:
+- `pallets/flask`
