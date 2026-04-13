@@ -21,14 +21,15 @@ analysis
 └── organization/
     └── repository/
         └── pr_1/
-            ├── head.zip
-            └── base.zip
+            ├── head_{Oid}.zip
+            └── base_{Oid}.zip
 dump/
 └── pull_requests
 readme.md #You are here
 ```
 
-Directory names strictly follow the organization name, repository name, and the target pull request number.
+Directory names strictly follow the organization name, repository name, and the target pull request number. 
+Inside each PR directory, the source code of the head and base branches is stored in separate zip files, named according to their respective Git OIDs.
 
 For example, the 9th pull request of the Spring Framework repository (organization: `spring-projects`, repository: `spring-framework`) is located at:
 
@@ -65,18 +66,19 @@ A detailed description of the stored data is provided in the next section.
 Each entry is a JSON object representing a unique PR analysis.
 
 #### Primary Fields
-| Field | Type | Description                                                   |
-| :--- | :--- |:--------------------------------------------------------------|
-| `_id` | `String` | Unique identifier (e.g., `Org_Repo_backend_pr1`).             |
-| `analysed_at` | `Date` | Timestamp of the technical analysis (MongoDB `$date` format). |
-| `org` | `String` | GitHub Organization name.                                     |
-| `repo` | `String` | Repository name.                                              |
-| `base` | `Object` | Code metrics of the target branch (before the PR).            |
-| `head` | `Object` | Code metrics of the source branch (after the PR).             |
-| `meta` | `Object` | GitHub metadata for the Pull Request.                         |
-| `stats` | `Object` | Size and duration statistics.                                 |
-| `comments` | `Array` | List of comments (human and bot-generated).                   |
-| `reviews` | `Array` | List of code reviews performed.                               |
+| Field | Type | Description                                                             |
+| :--- | :--- |:------------------------------------------------------------------------|
+| `_id` | `String` | Unique identifier (e.g., `Org_Repo_backend_pr1`).                       |
+| `analysed_at` | `Date` | Timestamp of the technical analysis (MongoDB `$date` format).           |
+| `org` | `String` | GitHub Organization name.                                               |
+| `repo` | `String` | Repository name.                                                        |
+| `base` | `Object` | Code metrics of the target branch (before the PR).                      |
+| `head` | `Object` | Code metrics of the source branch (after the PR).                       |
+| `meta` | `Object` | GitHub metadata for the Pull Request.                                   |
+| `merged_in_default_branch` | `Boolean` | Indicates if the PR was merged into the default branch.                   |
+| `stats` | `Object` | Size and duration statistics.                                           |
+| `comments` | `Array` | List of comments (human and bot-generated).                             |
+| `reviews` | `Array` | List of code reviews performed.                                         |
 
 ---
 
@@ -98,7 +100,7 @@ These objects measure the technical health of the source code. The metrics are c
 * **title**: Title of the PR.
 * **body**: Description/Content of the PR.
 * **state**: Current status (`MERGED`, `OPEN`, `CLOSED`).
-* **created_at** / **closed_at**: Lifecycle timestamps.
+* **created_at** / **closed_at** / **merged_at**: Lifecycle timestamps.
 * **author**: Object containing `login` and `is_bot` (Boolean).
 
 #### 3. Statistics (`stats`)
@@ -114,3 +116,7 @@ The arrays contain objects detailing:
 * **body**: Text content (Markdown, often including SonarCloud badges).
 * **state** (Reviews only): Validation status (`COMMENTED`, `APPROVED`, `CHANGES_REQUESTED`).
 * **created_at** / **submitted_at**: Timestamp of the interaction.
+
+## Current Repositories
+The dataset includes PRs from the following repositories:
+- `pallets/flask`
