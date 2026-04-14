@@ -1,6 +1,6 @@
 # Pull Requests Dataset
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19354721.svg)](https://doi.org/10.5281/zenodo.19354721)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19354720.svg)](https://doi.org/10.5281/zenodo.19354720)
 
 This repository provides a comprehensive dataset of Pull Requests (PRs) collected from various GitHub repositories.
 
