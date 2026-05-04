@@ -80,7 +80,7 @@ Each entry is a JSON object representing a unique PR analysis.
 | `comments`                 | `Array` | List of comments (human and bot-generated).                             |
 | `reviews`                  | `Array` | List of code reviews performed.                                         |
 
-Note: The `merge_base` is the commit on the target branch that serves as the common ancestor for the PR (calculated using the Git commit graph), it represents the state of the target branch before the PR.
+Note: The `merge_base` is the commit on the target branch that serves as the last common ancestor for the PR (calculated using the Git commit graph), it represents the state of the target branch before the PR.
 
 ---
 
