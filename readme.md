@@ -66,25 +66,27 @@ A detailed description of the stored data is provided in the next section.
 Each entry is a JSON object representing a unique PR analysis.
 
 #### Primary Fields
-| Field | Type | Description                                                             |
-| :--- | :--- |:------------------------------------------------------------------------|
-| `_id` | `String` | Unique identifier (e.g., `Org_Repo_backend_pr1`).                       |
-| `analysed_at` | `Date` | Timestamp of the technical analysis (MongoDB `$date` format).           |
-| `org` | `String` | GitHub Organization name.                                               |
-| `repo` | `String` | Repository name.                                                        |
-| `base` | `Object` | Code metrics of the target branch (before the PR).                      |
-| `head` | `Object` | Code metrics of the source branch (after the PR).                       |
-| `meta` | `Object` | GitHub metadata for the Pull Request.                                   |
+| Field                      | Type | Description                                                             |
+|:---------------------------| :--- |:------------------------------------------------------------------------|
+| `_id`                      | `String` | Unique identifier (e.g., `Org_Repo_backend_pr1`).                       |
+| `analysed_at`              | `Date` | Timestamp of the technical analysis (MongoDB `$date` format).           |
+| `org`                      | `String` | GitHub Organization name.                                               |
+| `repo`                     | `String` | Repository name.                                                        |
+| `merge_base`               | `Object` | Code metrics of the target branch (before the PR).                      |
+| `head`                     | `Object` | Code metrics of the source branch (after the PR).                       |
+| `meta`                     | `Object` | GitHub metadata for the Pull Request.                                   |
 | `merged_in_default_branch` | `Boolean` | Indicates if the PR was merged into the default branch.                   |
-| `stats` | `Object` | Size and duration statistics.                                           |
-| `comments` | `Array` | List of comments (human and bot-generated).                             |
-| `reviews` | `Array` | List of code reviews performed.                                         |
+| `stats`                    | `Object` | Size and duration statistics.                                           |
+| `comments`                 | `Array` | List of comments (human and bot-generated).                             |
+| `reviews`                  | `Array` | List of code reviews performed.                                         |
+
+Note: The `merge_base` is the commit on the target branch that serves as the common ancestor for the PR (calculated using the Git commit graph), it represents the state of the target branch before the PR.
 
 ---
 
 ### Object Details
 
-#### 1. Code Metrics (`base` & `head`)
+#### 1. Code Metrics (`merge_base` & `head`)
 These objects measure the technical health of the source code. The metrics are computed using SonarCloud and include:
 * **ncloc**: Non-Commenting Lines of Code.
 * **complexity**: Cyclomatic complexity.
@@ -120,3 +122,4 @@ The arrays contain objects detailing:
 ## Current Repositories
 The dataset includes PRs from the following repositories:
 - `pallets/flask`
+- `falconry/falcon`
