@@ -22,7 +22,7 @@ analysis
     └── repository/
         └── pr_1/
             ├── head_{Oid}.zip
-            └── base_{Oid}.zip
+            └── merge_base_{Oid}.zip
 dump/
 └── pull_requests
 readme.md #You are here
@@ -107,7 +107,7 @@ These objects measure the technical health of the source code. The metrics are c
 
 #### 3. Statistics (`stats`)
 * **head_size**: Relative size of the source branch.
-* **base_size**: Relative size of the target branch.
+* **merge_base_size**: Relative size of the target branch.
 * **total_time**: Total time elapsed (likely in minutes/hours).
 
 ---
