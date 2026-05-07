@@ -32,11 +32,8 @@ url: https://github.com/snail-unamur/PReQual-dataset
 
 abstract: >
   This repository provides a comprehensive dataset of Pull Requests (PRs)
-  collected from various GitHub repositories.
-
-  In addition to PR metadata, the dataset includes:
-  - Comments and reviews
-  - Source code from both the base and head branches
-  - Code metrics computed for each branch
+  collected from various GitHub repositories. In addition to PR metadata,
+  the dataset includes comments and reviews, source code from both the
+  base and head branches, and code metrics computed for each branch.
 
 license: CC-BY-4.0
