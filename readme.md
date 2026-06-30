@@ -75,7 +75,6 @@ Each entry is a JSON object representing a unique PR analysis.
 | `merge_base`               | `Object` | Code metrics of the target branch (before the PR).                      |
 | `head`                     | `Object` | Code metrics of the source branch (after the PR).                       |
 | `meta`                     | `Object` | GitHub metadata for the Pull Request.                                   |
-| `merged_in_default_branch` | `Boolean` | Indicates if the PR was merged into the default branch.                   |
 | `stats`                    | `Object` | Size and duration statistics.                                           |
 | `comments`                 | `Array` | List of comments (human and bot-generated).                             |
 | `reviews`                  | `Array` | List of code reviews performed.                                         |
@@ -104,6 +103,10 @@ These objects measure the technical health of the source code. The metrics are c
 * **state**: Current status (`MERGED`, `OPEN`, `CLOSED`).
 * **created_at** / **closed_at** / **merged_at**: Lifecycle timestamps.
 * **author**: Object containing `login` and `is_bot` (Boolean).
+* **head_ref_oid**: Oid of the head commit.
+* **base_ref_oid**: Oid of the base commit.
+* **base_ref_name**: Name of the base branch.
+* **merge_base_oid**: Oid of the merge base commit.
 
 #### 3. Statistics (`stats`)
 * **head_size**: Relative size of the source branch.
